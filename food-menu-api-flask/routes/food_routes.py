@@ -158,3 +158,32 @@ def delete_food_by_id():
       print("🚨 Error 🚨:", str(ValueError))
       return jsonify({'🚨 Error 🚨': ' Invalid ID or format'}), 400
    
+@food_routes.route('/food/update/<id>', methods=['PUT'])
+def update_food_by_id(id):
+   try:
+      request_data = request.json
+
+      if not request_data: 
+         return jsonify({"🚨 Error 🚨": "Check if the request body is valid and try again"})
+      
+      try:
+         food_id = ObjectId(id)
+      except ValueError:
+         return jsonify({'🚨 Error 🚨':'Invalid ID or format'}), 400
+      
+      food_exists = db.foods.find_one({'_id': food_id})
+
+      if not food_exists:
+         return jsonify({'🚨 Error 🚨:': 'Food item not found'}), 404
+      
+      db.foods.update_one(
+         {'_id': food_id},
+         {'$set': request_data})
+      
+      return jsonify({'✅ Success ✅': "Food item updated!"})
+   
+   except Exception as e:
+      print("🚨 Error 🚨: ", e)
+      return jsonify({'🚨 Error 🚨': 'Internal Server Error'}), 500
+   
+   
