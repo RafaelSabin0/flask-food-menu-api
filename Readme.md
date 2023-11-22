@@ -1,4 +1,4 @@
-# Food Menu API (Flask version)
+# Food Menu API (Python version)
 
 <div id="header" align="center">
 
@@ -8,11 +8,12 @@
 
 ## About the API
 
-Study project made in Python using Flask that store dishes information
+Study project made in Python using Flask that stores food information
 
 ## Technologies used in this project:
 
 <div align="center">
+<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="60" height="60"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="60" height="60"/>&nbsp;
-
+<img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original-wordmark.svg" title="Flask" alt="Flask" width="60" height="60"/>&nbsp;
 </div>
